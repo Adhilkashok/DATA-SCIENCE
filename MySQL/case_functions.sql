@@ -1,0 +1,43 @@
+-- >CASE FUNCTIONS< --The CASE function is used to apply IF–ELSE logic in SQL. It checks a condition and returns a value based on whether the condition is true or false.
+-- SYNTAX:
+-- SELECT COLUMN_NAMES,
+-- CASE
+--      WHEN CONDITION1 THEN RESULT1
+--      WHEN CONDITION2 THEN RESULT2
+--      .
+--      .
+--      .
+--      .
+--      ELSE RESULT
+-- END AS NEW_COLUMN_NAME
+-- FROM TABLE_NAME;
+CREATE DATABASE WORKS;
+USE WORKS;
+SHOW TABLES;
+CREATE TABLE EMPLOYEE(EMP_ID INT, NAME VARCHAR(50),SALARY DECIMAL(10,2));
+INSERT INTO EMPLOYEE VALUES(101,"ALICE",25000),(102,"BOB",45000),(103,"CHARLIE",70000),(104,"DAVID",55000);
+SELECT * FROM EMPLOYEE;
+SELECT NAME,SALARY,
+CASE
+   WHEN SALARY>60000 THEN "HIGH SALARY"
+   WHEN SALARY>40000 THEN "AVG SALARY"
+   WHEN SALARY>20000 THEN "BELOW AVG"
+END AS SALARY_STATUS
+FROM EMPLOYEE;   
+
+
+-- >IF FUNCTION => The IF() function is used to check a condition and return one value if the condition is true and another value if it is false.
+-- IF(CONDITION,VALUE_IF_TRUE,VALUE_IF_FALSE)
+SELECT NAME,SALARY,
+IF(SALARY>60000,"HIGH SALARY","AVG SALARY") AS SALARY_STATUS
+FROM EMPLOYEE;
+
+   
+   
+   
+ 
+
+
+
+
+     
